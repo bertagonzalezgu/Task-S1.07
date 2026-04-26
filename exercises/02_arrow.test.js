@@ -59,18 +59,10 @@ test('02_arrow-4: pot fer que les cadenes de filtres d\'arrays siguin més manej
 
   // SUBSTITUEIX TOTES LES FUNCIONS REGULARS PER FUNCIONS FLETXA
   const shoppingList = data
-    .filter(function(d) {
-      return d.type != 'Widget'
-    }) // Elimina els Widgets
-    .filter(function(d) {
-      return d.price < 5
-    }) // Troba només els elements restants amb preu < 5
-    .sort(function(a, b) {
-      return a.qty - b.qty
-    }) // Ordena per quantitat, descendent
-    .map(function(d) {
-      return d.name
-    }) // Extreu només el nom de cada element
+    shoppingList.filter = (d) => d.type != 'Widget' // Elimina els Widgets
+    shoppingList.filter = (d => d.price < 5) // Troba només els elements restants amb preu < 5
+    shoppingList.sort = (a, b) => a.qty - b.qty // Ordena per quantitat, descendent
+    shoppingList.map = (d) => d.name // Extreu només el nom de cada element
 
 
   const filterSource1 = data.filter.toString();
