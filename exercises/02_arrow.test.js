@@ -3,7 +3,11 @@ test('02_arrow-1: pot substituir funcions tradicionals', () => {
 
   // Escriu dues funcions que prenguin dos paràmetres i retornin el seu producte
   // Per a 'fnMultiply', assigna-li una funció tradicional
+  function fnMultiply(a,b){
+    return a*b
+  }
   // Per a 'arrowMultiply', assigna-li una funció fletxa
+  const arrowMultiply = (a,b) => a*b
 
   expect(fnMultiply(5, 5)).toBe(arrowMultiply(5, 5))
 })
@@ -14,9 +18,7 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   // Substitueix la 'function' en aquesta crida a 'map' per una funció fletxa.
   // Pista: no hauries de tenir claus ni 'return' quan acabis
 
-  const squares = nums.map(function(num) {
-    return num * num
-  })
+  const squares = nums.map = (num) => num * num
   const funcSource = squares.map.toString();
 
   expect(funcSource.includes('=>')).toBe(true);
@@ -34,9 +36,7 @@ test('02_arrow-3: lliga `this` a l\'àmbit d\'avaluació, no a l\'àmbit d\'exec
   const person = {
     name: 'Aaron',
     greetFriends: function(friends) {
-      return friends.map(function(friend) {
-        return this.name + ' saluda a ' + friend
-      })
+      return friends.map = (friend) => this.name + ' saluda a ' + friend
     },
   }
 
