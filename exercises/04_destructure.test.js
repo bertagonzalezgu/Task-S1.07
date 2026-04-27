@@ -17,7 +17,7 @@ const getNestedNumbers = () => [1, 2, [3, 4, [5, 6]]]
 
 test('04_destructure-1: can be used to pull apart objects', () => {
   // Utilitzant desestructuració, crida `getAddress()` per crear variables per 'city', 'state' i 'zip'.
-  // const address = getAddress();
+  const address = getAddress();
   const city = address.city;
   const state = address.state;
   const zip = address.zip;
@@ -28,6 +28,7 @@ test('04_destructure-1: can be used to pull apart objects', () => {
 
 test('04_destructure-2: sets missing values to undefined', () => {
   // Utilitzant desestructuració, crida `getAddress()` i crea una variable 'address'.
+  const {address} = getAddress()
   expect(address).toBeUndefined()
 })
 
