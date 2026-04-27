@@ -82,7 +82,9 @@ test('04_destructure-7: can be used to pull apart arrays', () => {
 
 test('04_destructure-8: can skip indexes in arrays', () => {
   // Crida a getNumbers i extreu el primer valor com `one` i el tercer com `three`.
-  
+  const numbers = getNumbers()
+  const one = numbers[0]
+  const three = numbers[2]
   expect(one).toBe(1)
   expect(three).toBe(3)
   expect(() => noop(two)).toThrow()
