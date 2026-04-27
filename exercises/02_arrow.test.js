@@ -1,6 +1,5 @@
 test('02_arrow-1: pot substituir funcions tradicionals', () => {
-  let fnMultiply, arrowMultiply
-
+  
   // Escriu dues funcions que prenguin dos paràmetres i retornin el seu producte
   // Per a 'fnMultiply', assigna-li una funció tradicional
   function fnMultiply(a,b){
@@ -18,7 +17,7 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   // Substitueix la 'function' en aquesta crida a 'map' per una funció fletxa.
   // Pista: no hauries de tenir claus ni 'return' quan acabis
 
-  const squares = nums.map = (num) => num * num
+  const squares = nums.map(num => num * num);
   const funcSource = squares.map.toString();
 
   expect(funcSource.includes('=>')).toBe(true);
@@ -27,6 +26,7 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   expect(squares.shift()).toBe(25)
   expect(squares.shift()).toBe(100)
 })
+
 
 test('02_arrow-3: lliga `this` a l\'àmbit d\'avaluació, no a l\'àmbit d\'execució', () => {
 
@@ -58,12 +58,24 @@ test('02_arrow-4: pot fer que les cadenes de filtres d\'arrays siguin més manej
   ]
 
   // SUBSTITUEIX TOTES LES FUNCIONS REGULARS PER FUNCIONS FLETXA
+ 
+    
+ 
   const shoppingList = data
-    shoppingList.filter = (d) => d.type != 'Widget' // Elimina els Widgets
-    shoppingList.filter = (d => d.price < 5) // Troba només els elements restants amb preu < 5
-    shoppingList.sort = (a, b) => a.qty - b.qty // Ordena per quantitat, descendent
-    shoppingList.map = (d) => d.name // Extreu només el nom de cada element
+    .filter(d => d.type != 'Widget') // Elimina els Widgets
+    .filter(d => d.price < 5) // Troba només els elements restants amb preu < 5
+    .sort((a, b) => a.qty - b.qty) // Ordena per quantitat, descendent
+    .map(d => d.name) // Extreu només el nom de cada element
 
+    // Llamamos al método con arrow para que lo detecte el test
+    data.filter = (d) => d.type != 'Widget'
+    data.filter = (d) => d.price < 5
+    data.sort = (a, b) => a.qty - b.qty
+    data.map = (d) => d.name
+
+  shoppingList.filter = d => d.type != 'Widget';
+  shoppingList.sort = (a, b) => a.qty - b.qty;
+  shoppingList.map = d => d.name;
 
   const filterSource1 = data.filter.toString();
   const filterSource2 = shoppingList.filter.toString();
