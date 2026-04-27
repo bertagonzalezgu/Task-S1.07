@@ -18,9 +18,9 @@ const getNestedNumbers = () => [1, 2, [3, 4, [5, 6]]]
 test('04_destructure-1: can be used to pull apart objects', () => {
   // Utilitzant desestructuració, crida `getAddress()` per crear variables per 'city', 'state' i 'zip'.
   // const address = getAddress();
-  // const city = address.city;
-  // const state = address.state;
-  // const zip = address.zip;
+  const city = address.city;
+  const state = address.state;
+  const zip = address.zip;
   expect(city).toBe('Salt Lake City')
   expect(state).toBe('UT')
   expect(zip).toBe(84115)
