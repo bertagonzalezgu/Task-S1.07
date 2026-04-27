@@ -1,6 +1,7 @@
 test('03_new-apis-1: should be easier to determine whether a string includes another', () => {
   const sentence = 'It was the best of times. It was the worst of times'
   // crea una variable anomenada `result` que es defineixi com una crida a sentence.includes
+  const result = sentence.includes('It was the best of times. It was the worst of times')
   expect(result).toBe(true)
 })
 
