@@ -17,8 +17,9 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   // Substitueix la 'function' en aquesta crida a 'map' per una funció fletxa.
   // Pista: no hauries de tenir claus ni 'return' quan acabis
 
-  const squares = nums.map(num => num * num);
-  const funcSource = squares.map.toString();
+  const mapp = num => num * num
+  const squares = nums.map(mapp);
+  const funcSource = mapp.toString();
 
   expect(funcSource.includes('=>')).toBe(true);
   
