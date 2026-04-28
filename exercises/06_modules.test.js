@@ -1,6 +1,11 @@
 import * as Mathy from '../common/Mathy'
 import * as IndexImport from '../common'
 // WRITE YOUR IMPORT STATEMENTS HERE
+import { sqrt as mySqrt, square as mySquare } from '../common/Mathy.js';
+import _ from 'lodash';
+import { add } from '../Mathy.js'
+
+
 
 test('can import Mathy', () => {
   // this one's already done! You're welcome :)
@@ -24,7 +29,7 @@ test('06_modules-1: can import from my node_modules', () => {
 
 test('06_modules-2: can import Mathy', () => {
   // Importa el mòdul Mathy i comprova que funciona correctament
-  expect(Mathy.add(1, 2)).toBe(3)
+  expect(Mathy.add(1, 2)).toBe(3) // faltan operaciones, añado la operación add en Mathy.js//
 })
 
 test('06_modules-3: can specify what to import, to only retain pieces of the import', () => {
