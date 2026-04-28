@@ -11,7 +11,7 @@ test('05_template-literals-1: should support string interpolation', () => {
     ],
   }
   // construeix una cadena utilitzant la interpolació de literals de plantilla
-  const personsFriends = ``
+  const personsFriends = `${person.name} has 6 friends: ${person.friends.join(', ')}`
   expect(personsFriends).toBe(
     'Kent C. Dodds has 6 friends: Brooke Dodds, Matt Zabriskie, Aaron Frost, Dave Geddes, Joe Eames, Ryan Florence',
   )
