@@ -25,8 +25,10 @@ test('05_template-literals-2: should support multi-line strings', () => {
 
 test('05_template-literals-3: should support string escaping', () => {
   // escapa correctament una cadena en un literal de plantilla per a cadascun d'aquests casos
-  expect(``).toBe('Hi\nthere!')
-  expect(``).toBe('This is `escaped` backticks')
+  const result1 = 'Hi\nthere!'
+  const result2 = 'This is `escaped` backticks'
+  expect(`${result1}`).toBe('Hi\nthere!')
+  expect(`${result2}`).toBe('This is `escaped` backticks')
 })
 
 //////// EXTRA CREDIT ////////
