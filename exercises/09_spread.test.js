@@ -10,6 +10,8 @@ test('09_spread-1: should be able to call a function and spread the arguments', 
     calls++
   }
   
+myFunction(...args)
+
   expect(calls).toBe(1)
 
 })
