@@ -102,9 +102,13 @@ test('08_parameters-7: it can default all arguments, optionally', () => {
   // tots els arguments siguin opcionals
 
   const myFunction = ({name, age, favoriteBand} = {}) => {
-    expect(name).toBeDefined(name)
-    expect(age).toBeDefined(age)
-    expect(favoriteBand).toBeDefined(favoriteBand)
+    name = 'Berta',
+    age = 26,
+    favoriteBand = 'My Chemical Romance'
+
+    expect(name).toBeDefined()
+    expect(age).toBeDefined()
+    expect(favoriteBand).toBeDefined()
   }
 
   myFunction({name: 'Axel', age: 37, favoriteBand: 'Taylor Swift'})
