@@ -1,3 +1,6 @@
+import {jest} from '@jest/globals' 
+
+
 test('17_public-class-fields-1: public class fields help us avoid .bind-ing everything', () => {
   class FakeReactComponent {
     constructor(props) {
@@ -10,12 +13,11 @@ test('17_public-class-fields-1: public class fields help us avoid .bind-ing ever
     constructor(...args) {
       super(...args)
       // no volem haver de fer això...
-      this.handleClick = this.handleClick.bind(this) // trist :-(
+      // this.handleClick = this.handleClick.bind(this) // trist :-(
     }
     // converteix això en un camp públic de classe perquè s'autolligui
-    handleClick({target: {value}}) {
-      this.props.onClick(value)
-    }
+    handleClick = ({target: {value}}) => {this.props.onClick(value)}
+    
     render() {
       // coses estranyes de JSX aquí
     }
