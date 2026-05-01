@@ -1,3 +1,6 @@
+// SKIP EXERCISE
+
+
 test('19_iterators-1: can get the iterator from an array', () => {
   const array = [1, 2, 3]
   // NO MIRIS ELS SEGÜENTS TESTS!

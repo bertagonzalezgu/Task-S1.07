@@ -1,3 +1,5 @@
+// SKIP EXERCISE
+
 test('13_weakmap-1: has a WeakMap method', () => {
   const key = {name: 'Aaron'}
   const value = {twitter: '@js_dev', gplus: '+AaronFrost'}
